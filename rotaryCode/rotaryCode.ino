@@ -4,7 +4,7 @@
 // Set the LCD address to 0x27 for a 16 chars and 2 line display
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-const int outputA = 6;w // clock of rotary
+const int outputA = 6; // clock of rotary
 const int outputB = 7; // dt of rotary
 int counter = 0;
 int aState;
