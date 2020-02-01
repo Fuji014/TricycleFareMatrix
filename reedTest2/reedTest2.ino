@@ -31,6 +31,7 @@ void setup()
     lcd.print("****");
     delay(1000);
     lcd.clear();
+    lcd.init();
     //lcd end
     
 
@@ -47,8 +48,8 @@ void loop()
  {
   rpm= v = 0; // make rpm and velocity as zero
   Serial.println(v);
-//  lcd.setCursor(3,0);
-//  lcd.print(v);
+  lcd.setCursor(3,0);
+  lcd.print(v);
   dtime=millis();
  }
    v = radius_of_wheel * rpm * 0.37699; //0.33 is the radius of the wheel in meter
@@ -65,9 +66,7 @@ void falling() //Called whenever a magnet is detected
     rpm=(1000/timetaken)*60;    //formulae to calculate rpm
     pevtime = millis();
     rotation=0;
-//    lcd.setCursor(3,2);
     Serial.println(v);
-//    lcd.print(v);
     //Cycle_BT.println("Magnet detected...."); //enable while testing the hardware
 
     // calculate km/ph
@@ -83,4 +82,7 @@ void falling() //Called whenever a magnet is detected
     
     
   }
+}
+void lcdPrint(){
+  
 }
